@@ -20,26 +20,27 @@ import model.DBConnect;
  */
 public class BookDAO extends DBConnect {
 
-//    Connection con = null;//ket noi sql
-//    PreparedStatement ps = null;//dua query sang sql
-//    ResultSet rs = null;// nhan ket qua tu sql
+    // Connection con = null;//ket noi sql
+    // PreparedStatement ps = null;//dua query sang sql
+    // ResultSet rs = null;// nhan ket qua tu sql
     // statement dung cho sql don gian,ko truyen tham so
     // prepare phuc tap, co truyen tham so
-//    public ResultSet getAll() {
-//        String sql = "select * from Books";
-//        ResultSet rs = getData(sql);
-//        return rs;
-//    }
-//    public ResultSet getAllBookByCID(int cid) {
-//        String sql = "select * from Books where CategoryID = " + cid;
-//        ResultSet rs = getData(sql);
-//        return rs;
-//    }
+    // public ResultSet getAll() {
+    // String sql = "select * from Books";
+    // ResultSet rs = getData(sql);
+    // return rs;
+    // }
+    // public ResultSet getAllBookByCID(int cid) {
+    // String sql = "select * from Books where CategoryID = " + cid;
+    // ResultSet rs = getData(sql);
+    // return rs;
+    // }
     public ResultSet getAllBook() {
         String sql = "select b.BookID,b.Title,a.\"Name\"as AuthorName,b.\"Description\",b.Price,b.PublicationDate,b.Publisher,b.QuantityInStock,c.CategoryName,b.\"Image\" \n"
                 + "from Books b, Authors a, Categories c\n"
                 + "where b.AuthorID = a.AuthorID and b.CategoryID=c.CategoryID";
         ResultSet rs = getData(sql);
+        System.out.println("ádasd");
         return rs;
     }
 
