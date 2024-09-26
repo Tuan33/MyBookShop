@@ -50,6 +50,7 @@ public class BookDAO extends DBConnect {
         ResultSet rs = getData(sql);
         try {
             while (rs.next()) {
+                //int bookid = rs.getInt(1);
                 int bookid = rs.getInt(1);
                 String title = rs.getString(2);
                 int authorid = rs.getInt(3);
